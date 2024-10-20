@@ -4,7 +4,7 @@ import json
 import time
 
 
-class LimitOrderMarketMaker:
+class TradingDepthStrategy:
     """Class for Limit Order Market Making with ccxt and multiple order levels."""
 
     def __init__(
@@ -291,7 +291,7 @@ if __name__ == "__main__":
         exit()
 
     # Initialize the bot
-    bot = LimitOrderMarketMaker(
+    bot = TradingDepthStrategy(
         bot_name,
         config_path,
     )

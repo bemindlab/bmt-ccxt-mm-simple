@@ -9,16 +9,15 @@ This is a basic market making strategy that I have implemented in Python. The st
 5. Tradind depth is the number of orders that can be placed on the bid and ask side of the market.
 
 ## Strategy
-1. LimitOrderMarketMaker class is used to implement the market making strategy.
+1. TradingDepthStrategy class is used to implement the market making strategy.
 - The class has the following attributes:
   - bot_name: The name of the bot.
   - config_path: The path to the configuration file.
   - base_order_amount: The base amount of the order.
   - order_levels: The number of orders that can be placed on the bid and ask side of the market.
-  - trading_depth: The number of orders that can be placed on the bid and ask side of the market.
+  - depth: The number of orders that can be placed on the bid and ask side of the market.
   - max_spread: The maximum spread between the bid and ask price.
   - spread_per_level: The spread per level.
-
 
 ## Configuration File
 The configuration file is a JSON file that contains the following parameters:
@@ -64,7 +63,80 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+run the following command to run the bot
 ``` bash
-python strategies/mm_limit.py
+python3 strategies/depth.py
 ```
 
+## Usage Docker Compose
+run the following command to build and run the docker container
+``` bash
+docker-compose up --build
+```
+
+Or in detached mode
+``` bash
+docker-compose up -d
+```
+
+## GKE (Google Kubernetes Engine) deployment
+steps to deploy the trading bot on GKE
+
+### Build the docker image
+``` bash
+export PROJECT_ID=your-project-id
+export PROJECT_ZONE=your-project-zone
+export NAMESPACE=your-namespace
+```
+
+### Copy config files
+``` bash
+cp bot_example.json btc_bots.json
+cp kube_deploy_example kube_deoploy
+```
+
+### build the docker image and  push the docker image to GCR
+``` bash
+gcloud auth configure-docker
+gcloud builds submit --tag gcr.io/$PROJECT_ID/tradingbot
+docker push gcr.io/$PROJECT_ID/tradingbot
+```
+
+### Create a GKE cluster
+``` bash
+gcloud container clusters create market-maker-cluster --num-nodes=1 --zone=$PROJECT_ZONE
+kubectl create namespace $NAMESPACE
+kubectl create deployment tradingbot-deployment --image=gcr.io/$PROJECT_ID/tradingbot:lastest -n $NAMESPACE
+```
+
+### ssh into the pod
+``` bash
+kubectl exec -it tradingbot-deployment -- /bin/bash
+```
+
+### get deployment 
+``` bash
+kubectl get pods
+kubectl get deployments
+kubectl get services
+```
+
+### delete deployment
+``` bash
+kubectl delete deployment tradingbot-deployment
+kubectl delete service tradingbot-service
+```
+
+### delete cluster
+``` bash
+gcloud container clusters delete market-maker-cluster --zone=$PROJECT_ZONE
+```
+
+### delete namespace
+``` bash
+kubectl delete namespace $NAMESPACE
+
+### delete project
+``` bash
+gcloud projects delete $PROJECT_ID
+```

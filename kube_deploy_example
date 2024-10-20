@@ -1,0 +1,12 @@
+#!/bin/bash
+export PROJECT_ID=your-project-id
+export NAMESPACE=your-namespace
+export DEPLOYMENT_NAME=your-deployment-name
+
+# Render the template with environment variables
+sed "s/\${DEPLOYMENT_NAME}/${DEPLOYMENT_NAME}/g" kube_deployment.yaml | \
+  sed "s/\${PROJECT_ID}/${PROJECT_ID}/g" > deployment_rendered.yaml
+
+# Apply the deployment with kubectl
+kubectl apply -f deployment_rendered.yaml
+# rm deployment_rendered.yaml
