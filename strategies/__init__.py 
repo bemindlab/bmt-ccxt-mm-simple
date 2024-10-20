@@ -1,0 +1,11 @@
+# __init__.py inside 'strategies' folder
+
+# Import the main classes or functions from your strategy modules
+from .mm_limit import LimitOrderMarketMaker
+
+# If you have other strategies, import them as well
+# from .mm_dynamic import DynamicMarketMaker
+# from .mm_other_strategy import OtherStrategy
+
+# Define what gets imported when someone does 'from strategies import *'
+__all__ = ['LimitOrderMarketMaker']

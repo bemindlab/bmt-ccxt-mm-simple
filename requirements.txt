@@ -1,0 +1,7 @@
+ccxt
+firebase_admin
+flask
+python-telegram-bot
+python_dotenv
+numpy
+pandas

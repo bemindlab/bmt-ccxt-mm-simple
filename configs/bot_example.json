@@ -1,0 +1,154 @@
+{
+    "token": "TOAD",
+    "bots": {
+        "Strategy1": {
+            "bot_name": "Strategy1",
+            "exchange_set": "set1",
+            "exchange": "binance",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 10000,
+                "order_levels": 3
+            }
+        },
+        "Strategy2": {
+            "bot_name": "Strategy2",
+            "exchange_set": "set1",
+            "exchange": "bitget",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 20000,
+                "order_levels": 5
+            }
+        },
+        "Strategy3": {
+            "bot_name": "Strategy3",
+            "exchange_set": "set2",
+            "exchange": "kraken",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 5000,
+                "order_levels": 10
+            }
+        },
+        "Strategy4": {
+            "bot_name": "Strategy4",
+            "exchange_set": "set1",
+            "exchange": "coinbasepro",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 15000,
+                "order_levels": 7
+            }
+        },
+        "Strategy5": {
+            "bot_name": "Strategy5",
+            "exchange_set": "set2",
+            "exchange": "huobipro",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 8000,
+                "order_levels": 4
+            }
+        },
+        "Strategy6": {
+            "bot_name": "Strategy6",
+            "exchange_set": "set1",
+            "exchange": "bitfinex",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 12000,
+                "order_levels": 6
+            }
+        },
+        "Strategy7": {
+            "bot_name": "Strategy7",
+            "exchange_set": "set2",
+            "exchange": "bittrex",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 3000,
+                "order_levels": 2
+            }
+        },
+        "Strategy8": {
+            "bot_name": "Strategy8",
+            "exchange_set": "set1",
+            "exchange": "okex",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 25000,
+                "order_levels": 8
+            }
+        },
+        "Strategy9": {
+            "bot_name": "Strategy9",
+            "exchange_set": "set2",
+            "exchange": "poloniex",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 6000,
+                "order_levels": 3
+            }
+        },
+        "Strategy10": {
+            "bot_name": "Strategy10",
+            "exchange_set": "set1",
+            "exchange": "kucoin",
+            "trading_pair": "TOAD/USDT",
+            "parameters": {
+                "desired_depth_per_side": 18000,
+                "order_levels": 5
+            }
+        }
+    },
+    "exchanges": {
+        "set1": {
+            "binance": {
+                "api_key": "your_binance_api_key",
+                "api_secret": "your_binance_api_secret"
+            },
+            "bitget": {
+                "api_key": "your_bitget_api_key",
+                "api_secret": "your_bitget_api_secret"
+            },
+            "coinbasepro": {
+                "api_key": "your_coinbasepro_api_key",
+                "api_secret": "your_coinbasepro_api_secret",
+                "api_password": "your_coinbasepro_passphrase"
+            },
+            "bitfinex": {
+                "api_key": "your_bitfinex_api_key",
+                "api_secret": "your_bitfinex_api_secret"
+            },
+            "okex": {
+                "api_key": "your_okex_api_key",
+                "api_secret": "your_okex_api_secret",
+                "api_password": "your_okex_passphrase"
+            },
+            "kucoin": {
+                "api_key": "your_kucoin_api_key",
+                "api_secret": "your_kucoin_api_secret",
+                "api_password": "your_kucoin_passphrase"
+            }
+        },
+        "set2": {
+            "kraken": {
+                "api_key": "your_kraken_api_key",
+                "api_secret": "your_kraken_api_secret"
+            },
+            "huobipro": {
+                "api_key": "your_huobipro_api_key",
+                "api_secret": "your_huobipro_api_secret"
+            },
+            "bittrex": {
+                "api_key": "your_bittrex_api_key",
+                "api_secret": "your_bittrex_api_secret"
+            },
+            "poloniex": {
+                "api_key": "your_poloniex_api_key",
+                "api_secret": "your_poloniex_api_secret"
+            }
+        }
+    }
+}
