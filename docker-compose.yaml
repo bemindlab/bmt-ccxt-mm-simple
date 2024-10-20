@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  bmt-ccxt-mm-simple:
+    build: .
+    stdin_open: true
+    tty: true 
+    volumes:
+      - ./configs:/app/config
+      - ./logs:/app/logs
+    # Uncomment the following lines to enable trading
+    # environment:
+    #   - CCXT_API_KEY=${CCXT_API_KEY}
+    #   - CCXT_SECRET=${CCXT_SECRET}
+    #   - CCXT_EXCHANGE=binance
+    #   - CCXT_SYMBOL=BTC/USDT
+    #   - CCXT_ORDER_TYPE=market
+    #   - CCXT_ORDER_SIDE=buy
+    #   - CCXT_ORDER_AMOUNT=0.001
+    #   - CCXT_ORDER_PRICE=null
+    #   - CCXT_ORDER_TIMEOUT=10000
+    #   - CCXT_LOG_LEVEL=debug
+    restart: always
+    command: python strategies/depth.py

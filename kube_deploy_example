@@ -1,7 +1,7 @@
 #!/bin/bash
-export PROJECT_ID=ism-market-maker-bot
-export NAMESPACE=tradingbot
-export DEPLOYMENT_NAME=tradingbot-toad
+export PROJECT_ID=your-project-id
+export NAMESPACE=your-namespace
+export DEPLOYMENT_NAME=your-deployment-name
 
 # Render the template with environment variables
 sed "s/\${DEPLOYMENT_NAME}/${DEPLOYMENT_NAME}/g" kube_deployment.yaml | \
@@ -9,4 +9,4 @@ sed "s/\${DEPLOYMENT_NAME}/${DEPLOYMENT_NAME}/g" kube_deployment.yaml | \
 
 # Apply the deployment with kubectl
 kubectl apply -f deployment_rendered.yaml
-rm deployment_rendered.yaml
+# rm deployment_rendered.yaml

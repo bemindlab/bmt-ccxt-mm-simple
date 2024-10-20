@@ -29,12 +29,16 @@ COPY requirements.txt ./
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-RUN 
+
 # Copy the rest of the application code
 COPY . .
 
 # Expose the port your app runs on (if applicable)
 # EXPOSE 8000
 
-# Set the command to run your application
-CMD ["python", "main.py"]
+# Set the command to run main
+# CMD ["python", "main.py"]
+
+# Set the command to run strategies/depth.py
+CMD ["python", "strategies/depth.py "]
+
