@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Define the base image name
+IMAGE_NAME="tradingbot"
+URL="gcr.io"
+
+# Base image name
+BASE_IMAGE="$URL/$PROJECT_ID/$IMAGE_NAME"
+
+# Docker commands
+docker image rm $BASE_IMAGE
+echo "Building and pushing the image to $BASE_IMAGE"
+docker build --platform linux/amd64 --no-cache -t $BASE_IMAGE .
+docker push $BASE_IMAGE
+
+# Display a success message
+echo "Upload completed."

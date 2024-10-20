@@ -1,0 +1,25 @@
+# Use the official Python image.
+FROM python:3.12-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Install any needed system packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # Add any system dependencies your app needs here \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements.txt first to leverage Docker cache
+COPY requirements.txt ./
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port your app runs on (if applicable)
+# EXPOSE 8000
+
+# Set the command to run your application
+CMD ["python", "main.py"]

@@ -1,0 +1,4 @@
+venv
+configs/*
+backup/*
+kube_deploy

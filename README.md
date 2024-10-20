@@ -65,6 +65,46 @@ pip install -r requirements.txt
 
 ## Usage
 ``` bash
-python strategies/mm_limit.py
+python3 strategies/mm_limit.py
 ```
 
+## GKE (Google Kubernetes Engine) deployment
+steps to deploy the trading bot on GKE
+
+### Build the docker image
+``` bash
+export PROJECT_ID=your-project-id
+export PROJECT_ZONE=your-project-zone
+export NAMESPACE=your-namespace
+```
+
+### build the docker image
+``` bash
+gcloud auth configure-docker
+gcloud builds submit --tag gcr.io/$PROJECT_ID/tradingbot:lastest
+```
+
+### Create a GKE cluster
+``` bash
+gcloud container clusters create market-maker-cluster --num-nodes=1 --zone=$PROJECT_ZONE
+kubectl create namespace $NAMESPACE
+kubectl create deployment tradingbot-deployment --image=gcr.io/$PROJECT_ID/tradingbot:lastest -n $NAMESPACE
+```
+
+### ssh into the pod
+``` bash
+kubectl exec -it tradingbot-deployment -- /bin/bash
+```
+
+### get deployment 
+``` bash
+kubectl get pods
+kubectl get deployments
+kubectl get services
+```
+
+### delete deployment
+``` bash
+kubectl delete deployment tradingbot-deployment
+kubectl delete service tradingbot-service
+```
