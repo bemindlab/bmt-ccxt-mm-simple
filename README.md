@@ -35,7 +35,7 @@ The configuration file is a JSON file that contains the following parameters:
             "bot_name": "Strategy1",
             "exchange_set": "set1",
             "exchange": "binance",
-            "trading_pair": "TOAD/USDT",
+            "trading_pair": "BTC/USDT",
             "parameters": {
                 "desired_depth_per_side": 10000,
                 "order_levels": 3
@@ -65,5 +65,6 @@ pip install -r requirements.txt
 
 ## Usage
 ``` bash
-python main.py
+python strategies/mm_limit.py
 ```
+
