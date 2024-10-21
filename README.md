@@ -140,3 +140,11 @@ kubectl delete namespace $NAMESPACE
 ``` bash
 gcloud projects delete $PROJECT_ID
 ```
+
+## Keeping bots running in background using screen
+
+When using screen to run an instance in the background, run either of the following commands: screen or screen -S $NAME, where $NAME is what you wish to call this background instance. Use the latter to be more explicit if you want to run multiple bots.
+
+- To exit the screen (detach), press Ctrl + A then Ctrl + D in sequence.
+- To list all running instances, use screen -ls.
+- Log back into the screen by using either screen or screen -r $NAME to open a specific instance.
