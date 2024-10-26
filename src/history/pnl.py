@@ -1,15 +1,6 @@
-import json
-import ccxt
 import pandas as pd
-import time
-import os
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
-
-from utils.config import initialize_exchange, load_config, load_config_with_bot_name
-
-# Load environment variables from a .env file
-load_dotenv()
+from src.utils.config import initialize_exchange, load_config_with_bot_name
 
 
 class PnLCalculator:

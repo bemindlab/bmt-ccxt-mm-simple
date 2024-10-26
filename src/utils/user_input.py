@@ -1,7 +1,7 @@
 import os
 import logging
 
-from utils.config import load_config
+from src.utils.config import load_config
 
 
 def get_bots_config_names():
@@ -56,7 +56,13 @@ def get_feature_menu():
     """Print the feature menu and return the user's choice."""
     print("Select a feature:")
     print("-" * 50)
-    menu_names = ["Balance","PnL Calculator","History", "Exit"]
+    menu_names = [
+        "Balance",
+        "PnL Calculator",
+        "History",
+        "Market Price Strategy",
+        "Exit",
+    ]
     for i, name in enumerate(menu_names):
         print(f"{i+1}. {name}")
 

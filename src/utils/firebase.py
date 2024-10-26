@@ -8,7 +8,7 @@ def init_firebase_admin():
         from firebase_admin import credentials
 
         # Initialize Firebase Admin SDK
-        cred = credentials.Certificate("configs/firebase-admin.json")
+        cred = credentials.Certificate("src/configs/firebase-admin.json")
         firebase_admin.initialize_app(cred)
     except Exception as e:
         logging.error(f"Error initializing Firebase Admin SDK: {e}")
@@ -20,7 +20,6 @@ def init_firebase_admin():
 def get_firestore_client():
     """Get the Firestore client."""
     try:
-
         from firebase_admin import firestore
 
         # Get Firestore client
