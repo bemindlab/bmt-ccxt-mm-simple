@@ -124,16 +124,15 @@ class OrderBookUtils:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
-    print("=" * 50)
-    token = input("Enter the token: ")
-    print("-" * 50)
-    config_path = f"configs/{token}_bots.json"
-
+    # print("=" * 50)
+    # token = input("Enter the token: ")
+    # print("-" * 50)
+    config_path = f"configs/all_bots.json"
     config = json.load(open(config_path, "r"))
 
-    if token not in config.get("token", None):
-        print(f"Token '{token}' not found in the config file.")
-        exit()
+    # if token not in config.get("token", None):
+    #     print(f"Token '{token}' not found in the config file.")
+    #     exit()
 
     bot_name = None
 
@@ -163,7 +162,6 @@ if __name__ == "__main__":
         )
         bot.show_orders()
         print("=" * 50, "\n")
-
         bot.show_balance()
         print("=" * 50, "\n")
 

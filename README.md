@@ -55,17 +55,42 @@ Copy the bot_example.json it in a file named {token}_bots.json. Replace the API_
 ``` bash
 cp bot_example.json btc_bots.json
 ```
+## System Requirements
+- Python 3.1 or higher
+- pip (Python package installer)
+- Docker (Optional)
+- Google Cloud SDK (Optional)
+- Google Cloud Platform account (Optional)
+- Firebase account (Optional)
+- Firebase project (Optional)
+- Firebase Admin SDK (Optional)
+
+## Dependencies
+- venv
+- ccxt
+- numpy
+- pandas
+- flask
+- python-dotenv
+- python-telegram-bot
+- firebase-admin (optional)
 
 ## Installation
 ``` bash
-python3 -m venv venv && source venv/bin/activate
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ## Usage
 run the following command to run the bot
 ``` bash
-python3 strategies/depth.py
+python run.py
+```
+
+## Usage by single strategy
+run the following command to run the bot
+``` bash
+python strategies/depth.py
 ```
 
 ## Usage Docker Compose

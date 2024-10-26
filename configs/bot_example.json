@@ -1,5 +1,4 @@
 {
-    "token": "TOAD",
     "bots": {
         "Strategy1": {
             "bot_name": "Strategy1",

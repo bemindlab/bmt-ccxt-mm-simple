@@ -3,9 +3,5 @@
 # Import the main classes or functions from your strategy modules
 from .depth import TradingDepthStrategy
 
-# If you have other strategies, import them as well
-# from .mm_dynamic import DynamicMarketMaker
-# from .mm_other_strategy import OtherStrategy
-
 # Define what gets imported when someone does 'from strategies import *'
-__all__ = ['TradingDepthStrategy']
+__all__ = ["TradingDepthStrategy"]
