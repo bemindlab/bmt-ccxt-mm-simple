@@ -56,13 +56,7 @@ def get_feature_menu():
     """Print the feature menu and return the user's choice."""
     print("Select a feature:")
     print("-" * 50)
-    menu_names = [
-        "Balance",
-        "PnL Calculator",
-        "History",
-        "Market Price Strategy",
-        "Exit",
-    ]
+    menu_names = ["Balance", "PnL Calculator", "History", "Market Price Strategy"]
     for i, name in enumerate(menu_names):
         print(f"{i+1}. {name}")
 

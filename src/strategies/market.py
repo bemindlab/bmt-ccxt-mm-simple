@@ -111,7 +111,7 @@ class MarketPriceStrategy:
 
             # Sleep for a random time between 1 to 2 seconds
             sleep(random.uniform(1, 3))
-            print("-" * 20, "==========", "-" * 20, "\n")
+            print("\n")
 
             self.order_amount = self.order_amount
             self.place_market_order("sell")

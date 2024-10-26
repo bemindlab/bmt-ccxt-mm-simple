@@ -20,7 +20,6 @@ if __name__ == "__main__":
     print("=" * 50)
     print("Welcome to the Crypto Trading Bot!")
     print("=" * 50)
-
     bot_config_path = get_slected_bot_config_path()
 
     # load the selected bot config
@@ -29,6 +28,7 @@ if __name__ == "__main__":
     print("-" * 50, "\n")
 
     # get the feature menu
+    print("-" * 50, "\n")
     choice = get_feature_menu()
     print(f"Selected feature: {choice}")
 
