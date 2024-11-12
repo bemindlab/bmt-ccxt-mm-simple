@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 from datetime import datetime, timedelta
 from src.utils.config import initialize_exchange, load_config_with_bot_name
 
@@ -144,7 +145,7 @@ class PnLCalculator:
         :param days: Number of days to look back for trades (default 7 days).
         """
         since = self.exchange.parse8601(
-            (datetime.utcnow() - timedelta(days=30)).isoformat()
+            (datetime.utcnow() - timedelta(days)).isoformat()
         )
         until = self.exchange.parse8601(datetime.utcnow().isoformat())
         print(
